@@ -1,0 +1,13 @@
+.carousel-container{
+    width:70%;
+    margin: 0 auto;
+}
+.carousel-super-container, .carousel-general-super-container{
+    width:100%;
+    margin-top:2%;
+}
+.carousel-general-container{
+    width:80%;
+    margin: 0 auto;
+}
+

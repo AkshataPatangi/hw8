@@ -1,0 +1,7 @@
+    <ng-template #resultTemplate let-r="result" let-t="term">
+    <img [src]="r['backdrop_path']" class="mr-1" style="width: 50px">
+    <ngb-highlight [result]="r['name']" [term]="t"></ngb-highlight>
+  </ng-template>
+  
+  <input id="typeahead-template" placeholder="Search" type="text" class="formcontrol" [ngbTypeahead]="search" [(ngModel)]="model" [resultTemplate]="resultTemplate"  [inputFormatter]="formatter" />
+  
