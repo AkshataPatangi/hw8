@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CarouselService {
-  url = 'http://localhost:3000/currently';
+  url = '/currently';
     
   constructor(private httpClient: HttpClient) { }
    

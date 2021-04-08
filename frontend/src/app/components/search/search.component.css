@@ -1,0 +1,13 @@
+a{
+    color: white;
+    text-decoration: none; /* no underline */
+  }
+  .formcontrol{
+    outline: none;
+    border:none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    background-color: none;
+    color: white;
+}
+

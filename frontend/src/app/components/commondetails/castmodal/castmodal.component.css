@@ -1,0 +1,14 @@
+/* .modal-open {
+    overflow: hidden;
+} */
+.close{
+    border:1px solid black;
+}
+.modal-title{
+    opacity:0.7;
+}
+
+::ng-deep .popupng:hover{
+    color: #fff;
+    border-color: #6c757d;
+}

@@ -1,7 +1,9 @@
-    <ng-template #resultTemplate let-r="result" let-t="term">
+    <ng-template #resultTemplate class="pr-4" let-r="result" let-t="term">
+      <!-- <a [routerLink]="['/watch/'+r['media_type'], r['id']]"> -->
     <img [src]="r['backdrop_path']" class="mr-1" style="width: 50px">
     <ngb-highlight [result]="r['name']" [term]="t"></ngb-highlight>
+    <!-- </a> -->
   </ng-template>
   
-  <input id="typeahead-template" placeholder="Search" type="text" class="formcontrol" [ngbTypeahead]="search" [(ngModel)]="model" [resultTemplate]="resultTemplate"  [inputFormatter]="formatter" />
+  <input id="typeahead-template" placeholder="Search" type="text" class="formcontrol" [ngbTypeahead]="search" [(ngModel)]="model" [resultTemplate]="resultTemplate"  [inputFormatter]="formatter" (selectItem)="onSelect($event)"/>
   

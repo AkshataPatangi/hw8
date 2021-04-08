@@ -1,0 +1,56 @@
+.flexcontainer{
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+@media screen and (min-width: 600px) {
+::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+::-webkit-scrollbar-track{
+    -moz-box-shadow:    inset 0 0 2px darkgray;
+    -webkit-box-shadow: inset 0 0 2px darkgray;
+    box-shadow:         inset 0 0 2px darkgray;
+    background-color:transparent;
+    border-radius: 20px;
+    border: 1px solid slategrey;
+    
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:darkgray;
+    outline: 1px solid slategrey;
+  }
+}
+
+  .card{
+    border:none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .card-body{
+    text-align: center;
+  }
+
+  ::-webkit-scrollbar-thumb:active{
+    background-color:slategrey
+  }
+
+  .card-group{
+    margin-bottom: 3%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .flexcontainer{
+        margin:0 auto;
+        width:100%;
+        height:20%;
+        margin-bottom: 10%;
+    }
+    .carouselheader{
+        width:90%;
+        margin:0 auto;
+        margin-bottom: 5%;
+    }
+  }

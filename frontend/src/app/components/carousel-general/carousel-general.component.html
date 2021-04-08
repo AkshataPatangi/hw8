@@ -1,17 +1,30 @@
-<div [id]=carid class="carousel slide" data-ride="carousel" data-interval="false" width="80%">
-    <ol class = "carousel-indicators">
-        <li data-target = "#myCarousel" data-slide-to = "0" class="active"></li>
-        <li data-target = "#myCarousel" data-slide-to = "1"></li>
-        <li data-target = "#myCarousel" data-slide-to = "2"></li>
-        <li data-target = "#myCarousel" data-slide-to = "4"></li>
+<!-- <ngb-carousel *ngIf="mobile" [showNavigationIndicators]='false' [interval]="0">
+    <ng-template ngbSlide *ngFor="let image of mobileresults;">
+        <div class="picsum-img-wrapper">
+            <a [routerLink]="['/watch/'+mediatype, image['id']]">
+            <img [src]="image['poster_path']">
+            </a>
+            </div>
+    </ng-template>
+</ngb-carousel> -->
+
+ <div  [id]="carid" class="carousel slide" data-ride="carousel" data-interval="false">
+    <ol *ngIf="!mobile" class="carousel-indicators" >
+        <li [attr.data-target]="'#'+carid" *ngFor="let image of imagearray;let i = index"  [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
         <div *ngFor="let image of imagearray; let i = index" class="carousel-item {{ (i == 0) ? 'active' : ''}}">
-            <div class="row" >
+            <div class="row card-body relative" >
                 <div class="col-md-2" *ngFor="let item of image">
-                    <div class="card">
-                        <img class="card-img-top img-fluid" [src]="item['backdrop_path']" 
+                    <div class="card absolute">
+                        <a [routerLink]="['/watch/'+mediatype, item['id']]">
+                        <img class="card-img-top img-fluid" [src]="item['poster_path']" 
                               alt="Card image cap">
+                        
+                        <div  class="carousel-caption relative">
+                            <p class="ml-2" style="position: absolute;bottom:0;">{{item['name']}}</p>
+                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

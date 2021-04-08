@@ -1,0 +1,20 @@
+<div class="mt-5">
+<h2 class="carouselheader">Full Cast and Crew</h2>
+<div class="flexcontainer">
+    <div class="row flex-nowrap">
+        <div [class]="colclass"  *ngFor="let image of castcrew;">
+            <div class="card h-100" (click)="openModal(image['id'],image['profile_path'])">
+                <img class="card-img-top" [src]="image['profile_path']">
+                <div class="card-body" style="color: black;">
+                  <b>{{image['name']}}</b>
+                  <div *ngIf="image['character']">
+                    <b>AS</b><br/><spna>{{image['character']}}</spna>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+
+

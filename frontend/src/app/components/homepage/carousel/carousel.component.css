@@ -1,6 +1,116 @@
- img{
-   width:100%;
-   max-height: 100%;
-   object-fit: cover;
- }
+@media screen and (min-width: 600px) {
+#myCarousel1{
+  width:80%;
+  margin:0 auto;
+  max-height: 40vh;
+  margin-top:10%;
+}
 
+.picsum-img-wrapper{
+  position: relative;
+    color: white;
+}
+ 
+.imagediv{
+  z-index: -1;
+}
+
+.imagediv:hover .imageimg{
+  transform: scale(1.1);
+}
+
+.imagediv:hover .bottomtext{
+  opacity:1
+}
+
+.imageimg {
+  width: 100%;
+  transition: 0.1s all ease-in-out;
+  max-height:40vh;
+  
+}
+
+.bottomtext {
+  position: absolute;
+  bottom:0;
+  margin:0 auto;
+  left:0;
+  z-index:0;
+  font-size: 12px;
+  height: 56%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.1s all ease-in-out;
+}
+
+.title{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to top, black, black, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
+.wrappertext {
+  position: absolute;
+  bottom: 0px;
+  padding-left:3%;
+  text-align: left;
+  font-size: 16px;
+
+}
+
+}
+
+
+@media screen and (max-width: 600px) {
+  ::ng-deep .carousel-indicators {
+    display: none !important;
+  }
+
+  #myCarousel1{
+    width:80%;
+    margin:0 auto;
+    max-height: 40vh;
+    margin-top:20%;
+  }
+  
+  .picsum-img-wrapper{
+    position: relative;
+      color: white;
+  }
+   
+  .picsum-img-wrapper:hover .imageimg{
+    transform: scale(1.1);
+  }
+  
+  .imageimg{
+    width: 100%;
+    transition: 0.1s all ease-in-out;
+    max-height:40vh;
+  }
+  
+  .bottomtext {
+    position: absolute;
+    bottom:0;
+    margin:0 auto;
+    left:0;
+    font-size: 12px;
+    height: 56%;
+    width: 100%;
+    opacity: 1;
+    transition: 0.1s all ease-in-out;
+  }
+  
+  .title{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to top, black, black, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  }
+  
+  .wrappertext {
+    position: absolute;
+    bottom: 0px;
+    padding-left:3%;
+    text-align: left;
+    font-size: 14px;
+  }
+}

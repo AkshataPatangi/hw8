@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchService {
     
-  baseUrl: string = 'http://localhost:3000/searchmulti';
+  baseUrl: string = '/searchmulti';
   queryUrl: string = '?search=';
 
   constructor(private http: HttpClient) { }

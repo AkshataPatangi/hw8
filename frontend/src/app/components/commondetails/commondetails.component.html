@@ -1,1 +1,83 @@
-<p>commondetails works!</p>
+<div *ngIf='details' class="container details">
+        <div class="row">
+            <div class="col-sm-7">
+                <app-youtube-player [ytvideoid]="details['vkey']"></app-youtube-player>
+            </div>
+            <div class="col-sm-5">
+                <h1>{{details['name']}}</h1>
+                <P style="font-style: italic;opacity:0.7">{{details['tagline']}}</P>
+                <div class="row">
+                <div class="ml-3 mr-2" *ngIf="details['release_date']">
+                    <p style="opacity: 0.7;">{{details['release_date']}}</p>
+                </div>
+                <div class="ml-2" *ngIf="details['release_date'] && details['vote_average']">
+                        |
+                </div>
+                <div class="row ml-2 mr-2" *ngIf="details['vote_average'];else elseblock">
+                    <i class="fa fa-star" style="font-size:16px;color:white"></i>
+                    <p class="ml-2" style="opacity: 0.7;">{{details['vote_average']}}</p>
+                </div>
+                <ng-template  class="ml-2" #elseblock >
+                    |
+                </ng-template>
+                <div class="ml-2" *ngIf="details['runtime'] && details['vote_average']" >
+                    |
+                </div>
+
+                <div class="ml-2"  *ngIf="details['runtime']">
+                    <p style="opacity: 0.7;">{{details['runtime']}}</p>
+                </div>
+                </div>
+                <div *ngIf="details['genres']">
+                <p>Genres: <span style="opacity: 0.7;">{{details['genres']}}</span></p>
+                </div>
+                <div *ngIf="details['spoken_languages']">
+                <p>Spoken Languages: <span style="opacity: 0.7;">{{details['spoken_languages']}}</span></p>
+                </div>
+                <div *ngIf="checkexistance(); else elseBlock">
+                    <button class="buttonwatchlist mb-3" (click)="removefromwatchlist()">Remove from Watchlist</button>
+                </div>
+                <ng-template #elseBlock><button class="buttonwatchlist mb-3" (click)="addtowatchlist()">Add to Watchlist</button></ng-template>
+                <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{ successMessage }}
+                </ngb-alert>
+                <ngb-alert #dangerselfClosingAlert *ngIf="dangerMessage" type="danger" (closed)="dangerMessage = ''">{{ dangerMessage }}
+                </ngb-alert>
+            </div>
+        </div>
+        <div class="descriptiondiv">
+            <div class="mt-5" *ngIf="details['overview']">
+            <h5>Description</h5>
+            {{details['overview']}}
+            </div>
+        </div>
+        <div class="sharediv">
+            <h5 class="mt-5">Share</h5>
+            <a class="twitter-share-button" target="_blank" [href]="twitterURL()" data-size="large">
+            <i class="fa fa-twitter" style="font-size:28px;color:#1DA1F2"></i>
+            </a>
+            <a target="_blank" [href]="facebookURL()" class="fb-xfbml-parse-ignore">
+            <i class="fa fa-facebook-official" style="padding-left:10px;font-size:28px;color:#0d6efd"></i>
+            </a>
+       
+        </div>
+        <app-castandcrew *ngIf='castcrew?.length>0' [castcrew]=castcrew></app-castandcrew>
+        <app-reviews  *ngIf='reviews' [reviews]=reviews [count]=reviews.length></app-reviews>
+        <div class="mt-5" *ngIf='recommend?.length > 0'>
+            <div *ngIf="mediatype == 'movie'">
+                <h2 class="carouselheader">Recommended Movies</h2>
+            </div>
+            <div *ngIf="mediatype == 'tv'">
+                <h2 class="carouselheader">Recommended TV Shows</h2>
+            </div>
+            <app-carousel-general [carid] = carouselid [mediatype] = mediatype [imagearray]=recommend [mobileresults]=mobileresultsr></app-carousel-general>
+        </div>
+        <div  class="mt-5" *ngIf='similar?.length > 0'>
+            <div *ngIf="mediatype == 'movie'">
+                <h2 class="carouselheader">Similar Movies</h2>
+            </div>
+            <div *ngIf="mediatype == 'tv'">
+                <h2 class="carouselheader">Similar TV Shows</h2>
+            </div>
+        <app-carousel-general [carid] = "carouselid+'s'" [mediatype] = mediatype [imagearray]=similar [mobileresults]=mobileresultss></app-carousel-general>
+        </div>
+</div>

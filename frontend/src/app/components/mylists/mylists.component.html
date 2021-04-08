@@ -1,1 +1,24 @@
-<p>mylists works!</p>
+<div class="container">
+<div *ngIf="details;else elseblock" style="margin-top:100px;color:white"> 
+    <h2 class="headermylists">My Watchlist</h2>
+    <div class="row card-group relative">
+   
+            <div [class]="colclass" *ngFor="let item of details;">
+                <div class="card absolute">
+                    <a [routerLink]="['/watch/'+item['media_type'], item['id']]">
+                    <img class="card-img-top img-fluid" [src]="item['poster_path']" 
+                          alt="Card image cap">
+                    
+                    <div class="carousel-caption relative">
+                       <p class="ml-2" style="position: absolute;bottom:0;">{{item['name']}}</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+   
+</div>
+<ng-template #elseblock class="container">
+    <h2 style="margin-top:20%;color:white;text-align: center;">No items found in Watchlist</h2>
+</ng-template>
+</div>

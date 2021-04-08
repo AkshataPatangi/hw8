@@ -1,0 +1,54 @@
+.reviewsdetails{
+    width:100%;
+    height:20%;
+    background: white !important;
+    border-radius: 6px;
+    margin-bottom: 5%;
+    color:black;
+    padding:10px;
+}
+.countreviews{
+    opacity: 0.5;
+    margin-left:1%
+}
+
+.rounded-circle{
+    width:100px;
+    height:100px;
+}
+
+.lineclampreview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+  }
+
+ .badge-pill {
+     padding-left: 1.1em !important;
+     padding-right: 1.1em !important;
+     padding-top: .5em !important;
+     padding-bottom: .5em !important;
+     margin-left:3%
+ } 
+  .badgedarkspacing{
+      padding-right: 25%;
+  }
+  .badge-dark{
+      background-color: black !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    .reviewsdetails{
+        margin:0 auto;
+        width:90%;
+        height:20%;
+        margin-bottom: 10%;
+    }
+    .carouselheader{
+        width:90%;
+        margin:0 auto;
+        margin-bottom: 5%;
+    }
+  }

@@ -1,0 +1,50 @@
+.details {
+    margin-top:5%;
+    color:white
+}
+.buttonwatchlist{
+    background: #0069ed;
+    padding: 1rem 2rem;
+    outline: none;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-secondary{
+    background-color: #0d6efd;
+    border:none
+}
+
+@media screen and (max-width: 600px) {
+    youtube-player{
+        margin:0 auto;
+    }
+    .details {
+        margin-top:20%;
+    }
+    .carouselheader{
+        width:70%;
+        margin:0 auto;
+    }
+    .col-sm-5{
+        width:90% !important;
+        margin:0 auto;
+        margin-top:5%;
+    }
+    .col-sm-7{
+        width:90% !important;
+        margin:0 auto;
+    }
+    .descriptiondiv{
+        width:90% !important;
+        margin:0 auto;
+        text-align: justify;
+    }
+    .sharediv{
+        width:90% !important;
+        margin:0 auto;
+    }
+}
+
+ 

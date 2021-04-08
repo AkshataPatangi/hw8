@@ -1,44 +1,16 @@
 <ngb-carousel  *ngIf="results!=null" [interval]="2500" id="myCarousel1">
-    <ng-template ngbSlide>
+    <ng-template ngbSlide *ngFor="let result of results">
+      <a  [routerLink]="['/watch/movie/',result['id']]">
       <div class="picsum-img-wrapper">
-        <img  [src]= "'https://image.tmdb.org/t/p/original/' + results[0]['backdrop_path']" >
+        <div class="imagediv">
+        <img class="imageimg" [src]= "'https://image.tmdb.org/t/p/original/' + result['backdrop_path']" >
+        <div class="bottomtext">
+          <div class="title"> <p class="wrappertext">{{result['name']}}</p> </div>
+        </div>
+        </div>
       </div>
-      <div class="carousel-caption">
-        <p>{{results[0]['name']}}</p>
-      </div>
+    </a>
     </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img [src]="'https://image.tmdb.org/t/p/original/' + results[1]['backdrop_path']" >
-      </div>
-      <div class="carousel-caption">
-        <p>{{results[1]['name']}}</p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img [src]="'https://image.tmdb.org/t/p/original/' + results[2]['backdrop_path']" >
-      </div>
-      <div class="carousel-caption">
-        <p>{{results[2]['name']}}</p>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img  [src]="'https://image.tmdb.org/t/p/original/' + results[3]['backdrop_path']" >
-        </div>
-        <div class="carousel-caption">
-          <p>{{results[3]['name']}}</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img  [src]="'https://image.tmdb.org/t/p/original/' + results[4]['backdrop_path']" >
-        </div>
-        <div class="carousel-caption">
-          <p>{{results[4]['name']}}</p>
-        </div>
-      </ng-template>
   </ngb-carousel>
 
   
